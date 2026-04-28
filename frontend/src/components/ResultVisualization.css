@@ -1,0 +1,201 @@
+/* Result Visualization Styles */
+.result-visualization {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.result-visualization h2 {
+  color: #1f2937;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.result-visualization h3 {
+  color: #374151;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Prediction Summary */
+.prediction-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.yield-card {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 50%, #14532d 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(22, 163, 74, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.yield-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.yield-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(22, 163, 74, 0.35);
+}
+
+.yield-card.main {
+  padding: 3rem 2.5rem;
+}
+
+.yield-card h3,
+.yield-card h4 {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.yield-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -1px;
+}
+
+.yield-value.secondary {
+  font-size: 2.5rem;
+}
+
+.yield-unit {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 0.75rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.confidence-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Chart Container */
+.chart-container {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.1);
+}
+
+.chart-container h3 {
+  margin-bottom: 1.5rem;
+  color: #15803d;
+}
+
+/* Input Summary */
+.input-summary {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 2.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.input-summary h3 {
+  margin-bottom: 1.75rem;
+  color: #15803d;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.05);
+}
+
+.summary-item:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.1);
+  transform: translateY(-2px);
+}
+
+.summary-item .label {
+  font-weight: 700;
+  color: #16a34a;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.summary-item .value {
+  color: #1f2937;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .confidence-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yield-value {
+    font-size: 2.5rem;
+  }
+
+  .yield-value.secondary {
+    font-size: 2rem;
+  }
+
+  .result-visualization h2 {
+    font-size: 1.5rem;
+  }
+
+  .result-visualization h3 {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,193 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f3f4f6 100%);
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0fdf4 0%, #fafaf9 100%);
+}
+
+.app-header {
+  background: linear-gradient(135deg, rgba(21, 128, 60, 0.227) 0%, rgba(22, 101, 52, 0.85) 50%, rgba(29, 127, 62, 0.85) 100%),
+              url('/assets/kreamer_feed_inc_cover.jpeg') center/cover no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.3px;
+}
+
+.app-main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.form-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(22, 101, 52, 0.08);
+  padding: 2.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-section:hover {
+  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.12);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.results-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(22, 101, 52, 0.08);
+  padding: 2.5rem;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.empty-state {
+  grid-column: 2;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 2px dashed rgba(34, 197, 94, 0.3);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.empty-state-content {
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-state-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.error-message {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #fef2f2 0%, #fef3f2 100%);
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.app-footer {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-section {
+    position: static;
+  }
+
+  .empty-state {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .app-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .app-main {
+    padding: 1.5rem;
+  }
+
+  .form-section,
+  .results-section {
+    padding: 1.5rem;
+  }
+}
