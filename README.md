@@ -22,15 +22,8 @@ Machine learning models analyze these multimodal inputs to predict crop yields a
 - Open-source ML community
 - FastAPI and React communities
 
-## 📞 Support
-
-For questions or issues:
-- Create an Issue on GitHub
-- Contact: support@cropyieldprediction.com
-- Documentation: https://docs.cropyieldprediction.com
-
 ---
 
-**Last Updated**: April 2024  
+**Last Updated**: April 2026
 **Version**: 1.0.0
 # AI-Crop-Project
